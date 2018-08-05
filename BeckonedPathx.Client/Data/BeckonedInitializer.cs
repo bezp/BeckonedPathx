@@ -35,7 +35,7 @@ namespace BeckonedPathx.Client.Data
         //public DateTime EventDate { get; set; }
         //public string Description { get; set; }
         //public int UserId { get; set; }
-        var posts = new List<Post>
+        var posts = new List<Post>      //,UpdatedDate=DateTime.Parse("1998-08-08")
             {
             new Post{UserId=1,Description="Movies",EventDate=DateTime.Parse("2019-08-01"),LocationAddress="9674 Grand Chariot Drive",CreatedDate=DateTime.Parse("2018-08-01")},
             new Post{UserId=2,Description="Book Club",EventDate=DateTime.Parse("2019-09-01"),LocationAddress="6432 Improbable Avenue",CreatedDate=DateTime.Parse("2018-08-01")},

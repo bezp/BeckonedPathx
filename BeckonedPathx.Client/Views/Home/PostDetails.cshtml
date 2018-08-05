@@ -1,10 +1,41 @@
 ﻿@model BeckonedPathx.Client.Models.Post
 
 @{
+    /**/
+
     ViewBag.Title = "Details";
 }
-<h2>Details</h2>
+@*@foreach (var x in ViewBag.asd)
+    {
+        <li>@x</li>
+    }*@
 
+
+@using (Html.BeginForm())
+{@Html.AntiForgeryToken()
+@Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+@Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })
+@Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
+
+    @Html.HiddenFor(model => model.Description)
+
+@Html.EditorFor(model => model.PostId, new { htmlAttributes = new { @class = "form-control" } })
+@Html.EditorFor(model => model.EventDate, new { htmlAttributes = new { @class = "form-control" } })
+@Html.EditorFor(model => model.UserId, new { htmlAttributes = new { @class = "form-control" } })
+<input type="submit" value="Create" class="btn btn-default" />
+}
+<h2>Details</h2>
+@ViewBag.asd.User.FirstName <br />
+@ViewBag.asd
+<br />
+@ViewBag.asd.Comments <br />
+@foreach (var x in ViewBag.asd.Comments)
+{
+    <li>@x.Message</li>
+}
+
+@Html.DisplayFor(model => model.User) has id
+@Html.DisplayFor(model => model.UserId)
 <div>
     <h4>Post</h4>
     <hr />

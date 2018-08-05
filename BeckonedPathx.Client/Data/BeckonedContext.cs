@@ -26,12 +26,16 @@ namespace BeckonedPathx.Client.Data
             //may cause cycles or multiple cascade paths. Specify ON DELETE NO ACTION or ON 
             //UPDATE NO ACTION, or modify other FOREIGN KEY constraints.
             //Could not create constraint or index.
-            modelBuilder.Entity<Post>()
-                .HasRequired(p => p.User)
-                .WithMany()
+
+            //modelBuilder.Entity<Post>()
+            //    .HasRequired(p => p.User)
+            //    .WithMany(u => u.Posts)
+            //    .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Posts)
+                .WithRequired(p => p.User)
                 .WillCascadeOnDelete(false);
-
-
         }
 
 
